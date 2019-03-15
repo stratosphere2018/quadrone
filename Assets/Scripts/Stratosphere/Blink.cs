@@ -18,11 +18,11 @@ namespace Stratosphere
         /// <summary>
         /// テキストメッシュ
         /// </summary>
-        public TextMesh Mesh { get; set; }
+        private TextMesh Mesh { get; set; }
         /// <summary>
         /// テキスト格納用(空文字列で初期化)
         /// </summary>
-        public string Text { get; set; } = "";
+        private string Text { get; set; } = "";
 
         private void Start()
         {
