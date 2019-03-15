@@ -1,6 +1,9 @@
 ﻿namespace Stratosphere.Quadrone
 {
-    public class Sword : Skill
+    /// <summary>
+    /// カード：ソード
+    /// </summary>
+    public class Sword : Card
     {
         Sword()
         {

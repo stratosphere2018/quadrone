@@ -10,31 +10,48 @@ namespace Stratosphere
     [RequireComponent(typeof(TextMesh))]
     public class Blink : MonoBehaviour
     {
+        /// <summary>
+        /// 点滅感覚(デフォルト:0.5f)
+        /// </summary>
         public float interval = 0.5f;
-        private TextMesh mesh;
-        private string text = "";
+
+        /// <summary>
+        /// テキストメッシュ
+        /// </summary>
+        public TextMesh Mesh { get; set; }
+        /// <summary>
+        /// 初期テキスト格納用(空文字列で初期化)
+        /// </summary>
+        public string Text { get; set; } = "";
 
         private void Start()
         {
-            mesh = GetComponent<TextMesh>();
-            text = mesh.text;
-            StartCoroutine("Blinker");
+            Mesh = GetComponent<TextMesh>();    // TextMeshコンポーネントを取得
+            Text = Mesh.text;                   // テキストの内容を初期化
+            StartCoroutine("Blinker");          // コルーチン開始
         }
 
+        /// <summary>
+        /// 点滅コルーチン
+        /// </summary>
+        /// <returns></returns>
         private IEnumerator Blinker()
         {
             while (gameObject.activeSelf)
             {
-                mesh.text = text;
+                Mesh.text = Text;
                 yield return new WaitForSecondsRealtime(interval);
-                mesh.text = "";
+                Mesh.text = "";
                 yield return new WaitForSecondsRealtime(interval);
             }
         }
 
+        /// <summary>
+        /// 念のためテキスト情報をリセット
+        /// </summary>
         private void OnDestroy()
         {
-            mesh.text = text;
+            Mesh.text = Text;
         }
     }
 }

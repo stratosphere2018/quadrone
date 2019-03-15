@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 namespace Stratosphere.Quadrone
 {
+    /// <summary>
+    /// 要る？
+    /// </summary>
     public class SceneController : MonoBehaviour
     {
     }
