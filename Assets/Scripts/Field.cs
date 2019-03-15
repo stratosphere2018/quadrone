@@ -2,8 +2,11 @@
 
 namespace Stratosphere.Quadrone
 {
+    /// <summary>
+    /// バトルフィールド
+    /// </summary>
     public class Field : MonoBehaviour
     {
-        Panel[,] Panels = new Panel[6, 3];
+        PanelController[,] Panels = new PanelController[6, 3];
     }
 }

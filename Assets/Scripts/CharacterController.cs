@@ -9,9 +9,10 @@ namespace Stratosphere.Quadrone
     /// </summary>
     public class CharacterController : MonoBehaviour
     {
-        private Vector2 _position;
-
-        public Vector2 Position { get => _position; private set => _position = value; }
+        /// <summary>
+        /// 現在位置
+        /// </summary>
+        public Vector2 Position { get; private set; }
 
         // Start is called before the first frame update
         void Start()
@@ -26,11 +27,11 @@ namespace Stratosphere.Quadrone
             input.Set(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
             if (input.x > 0)
             {
-                _position.x += 1;
+                Position.Set(Position.x + 1, Position.y);
             }
             else if (input.x < 0)
             {
-                _position.x -= 1;
+                Position.Set(Position.x + 1, Position.y);
             }
         }
     }

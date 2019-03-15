@@ -2,7 +2,10 @@
 
 namespace Stratosphere.Quadrone
 {
-    public class Panel : MonoBehaviour
+    /// <summary>
+    /// バトル時のパネル
+    /// </summary>
+    public class PanelController : MonoBehaviour
     {
         public readonly PanelColor DefaultPanelColor;
         public PanelColor CurrentPanelColor;

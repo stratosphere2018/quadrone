@@ -11,7 +11,7 @@ namespace Stratosphere
     public class Blink : MonoBehaviour
     {
         /// <summary>
-        /// 点滅感覚(デフォルト:0.5f)
+        /// 点滅感覚(デフォルト:0.5秒)
         /// </summary>
         public float interval = 0.5f;
 
@@ -20,14 +20,14 @@ namespace Stratosphere
         /// </summary>
         public TextMesh Mesh { get; set; }
         /// <summary>
-        /// 初期テキスト格納用(空文字列で初期化)
+        /// テキスト格納用(空文字列で初期化)
         /// </summary>
         public string Text { get; set; } = "";
 
         private void Start()
         {
             Mesh = GetComponent<TextMesh>();    // TextMeshコンポーネントを取得
-            Text = Mesh.text;                   // テキストの内容を初期化
+            Text = Mesh.text;                   // テキストの内容を取得/保持
             StartCoroutine("Blinker");          // コルーチン開始
         }
 

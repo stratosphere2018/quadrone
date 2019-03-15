@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace Stratosphere.Quadrone
 {
+    /// <summary>
+    /// セーブデータ
+    /// </summary>
     [Serializable]
     public class PlayerData : object
     {
