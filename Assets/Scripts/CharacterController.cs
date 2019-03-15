@@ -31,7 +31,7 @@ namespace Stratosphere.Quadrone
             }
             else if (input.x < 0)
             {
-                Position.Set(Position.x + 1, Position.y);
+                Position.Set(Position.x - 1, Position.y);
             }
         }
     }
