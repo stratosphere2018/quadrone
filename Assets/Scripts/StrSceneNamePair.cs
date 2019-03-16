@@ -5,7 +5,7 @@ namespace Stratosphere.Quadrone
 {
 	/// <summary>
 	/// 文字列とシーン名列挙体のペアクラス
-	/// テンプレーとだとインスペクタ―に表示できないため、
+	/// テンプレートだとインスペクタ―に表示できないため、
 	/// ほとんど空のクラス
 	/// </summary>
 	[Serializable]
