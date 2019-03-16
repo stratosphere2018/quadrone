@@ -15,13 +15,4 @@ namespace Stratosphere.Quadrone
 		// 不足
 		// 随時足してください
 	}
-
-	public enum ButtonName
-	{
-		Horizontal,
-		Vertical,
-		Submit,
-		Cancel,
-	}
 }
-
