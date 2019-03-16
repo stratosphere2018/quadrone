@@ -145,11 +145,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scenes:
   - key: "\u30D0\u30C8\u30EB"
-    value: 5
-  - key: "\u30C1\u30C3\u30D7\u30C8\u30EC\u30FC\u30C0\u30FC"
-    value: 0
+    value: 4
+  - key: Title
+    value: 2
   - key: "\u30E1\u30CB\u30E5\u30FC"
-    value: 0
+    value: 5
 --- !u!102 &32804618
 TextMesh:
   serializedVersion: 3

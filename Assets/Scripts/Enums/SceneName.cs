@@ -7,11 +7,11 @@ namespace Stratosphere.Quadrone
 	public enum SceneName
 	{
 		None,
-		Root,
 		Loading,
 		Title,
 		Home,
 		Battle,
+        Menu,
 		// 不足
 		// 随時足してください
 	}
