@@ -1,31 +1,27 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 namespace Stratosphere.Quadrone
 {
-    /// <summary>
-    /// 項目選択UI
-    /// </summary>
-    [RequireComponent(typeof(TextMesh))]
-    public class SelectText : MonoBehaviour
-    {
-        /// <summary>
-        /// 文字列ペア
-        /// key:表示する文字列
-        /// value:シーン名
-        /// </summary>
-        public StringPair[] scenes;
+	/// <summary>
+	/// 項目選択UI
+	/// </summary>
+	[RequireComponent(typeof(TextMesh))]
+	public class SelectText : MonoBehaviour
+	{
+		public StrSceneNamePair[] scenes;
 
-        /// <summary>
-        /// テキストメッシュ
-        /// </summary>
-        private TextMesh Mesh { get; set; }
-        /// <summary>
-        /// 選択中の項目格納用
-        /// </summary>
-        private int Select { get; set; }
+		/// <summary>
+		/// テキストメッシュ
+		/// </summary>
+		private TextMesh Mesh { get; set; }
+		/// <summary>
+		/// 選択中の項目格納用
+		/// </summary>
+		public int Select { get; private set; }
 
         // Start is called before the first frame update
         void Start()
