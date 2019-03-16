@@ -4,21 +4,24 @@ using UnityEngine;
 
 namespace Stratosphere.Quadrone
 {
-    public enum SceneName
-    {
-        None,
-        [StringValueAttribute("Scenes")]
-        Root,
-        [StringValueAttribute("Loading")]
-        Loading,
-        [StringValueAttribute("Title")]
-        Title,
-        [StringValueAttribute("Home")]
-        Home,
-        [StringValueAttribute("Battle")]
-        Battle,
-        // 不足
-        // 随時足してください
-    }
+	public enum SceneName
+	{
+		None,
+		Root,
+		Loading,
+		Title,
+		Home,
+		Battle,
+		// 不足
+		// 随時足してください
+	}
+
+	public enum ButtonName
+	{
+		Horizontal,
+		Vertical,
+		Submit,
+		Cancel,
+	}
 }
 
