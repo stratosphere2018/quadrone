@@ -144,12 +144,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scenes:
-  - key: 
-    value: 
-  - key: 
-    value: 
-  - key: 
-    value: 
+  - key: "\u30D0\u30C8\u30EB"
+    value: Battle
+  - key: "\u30C1\u30C3\u30D7\u30C8\u30EC\u30FC\u30C0\u30FC"
+    value: Trader
+  - key: "\u30E1\u30CB\u30E5\u30FC"
+    value: Menu
 --- !u!102 &32804618
 TextMesh:
   serializedVersion: 3

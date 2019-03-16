@@ -32,7 +32,6 @@ namespace Stratosphere.Quadrone
         {
             Mesh = GetComponent<TextMesh>();    // TextMeshコンポーネントを取得
             Select = 0;                         // 選択項目をリセット
-
         }
 
         // Update is called once per frame
@@ -41,13 +40,13 @@ namespace Stratosphere.Quadrone
             // 入力情報取得/選択項目変更
             if (Input.GetAxis("Vertical") > 0)
             {
-                Select++;
+                Select--;
             }
             else if (Input.GetAxis("Vertical") < 0)
             {
-                Select--;
+                Select++;
             }
-            Mathf.Clamp(Select, 0, 3);
+            Select = Mathf.Clamp(Select, 0, scenes.Length-1);
 
             // テキストレンダー
             Mesh.text = "";
@@ -59,7 +58,7 @@ namespace Stratosphere.Quadrone
                 }
                 else
                 {
-                    Mesh.text += "   ";
+                    Mesh.text += "     ";
                 }
                 Mesh.text += scenes[i].key + "\n";
             }
