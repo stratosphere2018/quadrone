@@ -38,6 +38,21 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BackGround
+    uniqueID: 192812157
+    locked: 0
+  - name: Panel
+    uniqueID: 244038237
+    locked: 0
+  - name: Player
+    uniqueID: 1954718359
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 3429751743
+    locked: 0
+  - name: Interval
+    uniqueID: 2152623467
     locked: 0
