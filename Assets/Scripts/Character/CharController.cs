@@ -7,7 +7,7 @@ namespace Stratosphere.Quadrone
     /// <summary>
     /// バトルでのキャラクター操作
     /// </summary>
-    public class PlayerController : MonoBehaviour
+    public class CharController : MonoBehaviour
     {
         /// <summary>
         /// 現在位置
