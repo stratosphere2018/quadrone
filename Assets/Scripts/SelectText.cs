@@ -27,9 +27,9 @@ namespace Stratosphere.Quadrone
         void Update()
         {
             // 入力情報取得/選択項目変更
-            if (Input.GetButtonDown(Enum.GetName(typeof(ButtonName), ButtonName.Vertical)))
+            if (Input.GetButtonDown(ButtonName.Vertical.ToString()))
             {
-                float inputY = Input.GetAxis(Enum.GetName(typeof(ButtonName), ButtonName.Vertical));
+                float inputY = Input.GetAxis(ButtonName.Vertical.ToString());
                 if (inputY > 0)
                 {
                     Select--;
@@ -56,20 +56,22 @@ namespace Stratosphere.Quadrone
                 }
             }
 
-            if (Input.GetButtonDown(Enum.GetName(typeof(ButtonName), ButtonName.Submit)))
+            if (Input.GetButtonDown(ButtonName.Submit.ToString()))
             {
 
-                SceneManager.LoadScene(Enum.GetName(typeof(SceneName), scenes[Select].value));
+                SceneManager.LoadScene(scenes[Select].value.ToString());
             }
         }
         void SetHome()
         {
             for (int i = 0; i < scenes.Length; i++)
             {
-                if (i == Select){
+                if (i == Select)
+                {
                     Mesh.text += "ﾆｱ ";
                 }
-                else{
+                else
+                {
                     Mesh.text += "     ";
                 }
                 Mesh.text += scenes[i].key + "\n";
