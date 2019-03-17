@@ -16,13 +16,21 @@ namespace BeginIt.Quadrone {
             return this;
         }
 
-        void SetTeam(Team team) {
+        public void SetTeam(Team team) {
             this.team = team;
             if (team == Team.Left) {
                 image.color = Color.red;
             } else if (team == Team.Right) {
                 image.color = Color.blue;
             }
+        }
+
+        public bool IsTeam(Team team) {
+            return this.team == team;
+        }
+
+        public Vector2 GetPosition() {
+            return transform.position;
         }
     }
 }
