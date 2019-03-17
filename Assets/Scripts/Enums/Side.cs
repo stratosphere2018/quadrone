@@ -2,9 +2,6 @@
 {
     public enum Side
     {
-        /// <summary>
-        /// これ、要る？
-        /// </summary>
         None,
 
         /// <summary>
