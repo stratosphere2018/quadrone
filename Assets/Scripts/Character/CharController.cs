@@ -4,35 +4,56 @@ using UnityEngine;
 
 namespace Stratosphere.Quadrone
 {
-    /// <summary>
-    /// バトルでのキャラクター操作
-    /// </summary>
     public class CharController : MonoBehaviour
     {
-        /// <summary>
-        /// 現在位置
-        /// </summary>
-        public Vector2 Position { get; private set; }
+        public Side side;
+        public Character character;
+
+        public BattleField Field { get; private set; }
+        public Vector2Int Position { get; set; }
+
 
         // Start is called before the first frame update
         void Start()
         {
-
+            Field = GameObject.Find("BattleField").GetComponent<BattleField>();
+            if (side == Side.Player)
+            {
+                Position = new Vector2Int(1, 1);
+            }
+            else
+            {
+                Position = new Vector2Int(1, 4);
+            }
         }
 
         // Update is called once per frame
         void Update()
         {
-            Vector2 input = new Vector2();
-            input.Set(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-            if (input.x > 0)
+        }
+
+        public void MoveInput(Vector2Int movement)
+        {
+            Vector2Int next = Position + movement;
+            Debug.Log(Field.GetSide(next).ToString());
+            if (0 <= next.x && next.x < BattleField.AreaXLength && 0 <= next.y && next.y < BattleField.AreaYLength && Field.GetSide(next) == side)
             {
-                Position.Set(Position.x + 1, Position.y);
+                StartCoroutine("Move", movement);
             }
-            else if (input.x < 0)
+        }
+
+        IEnumerator Move(Vector2Int movement)
+        {
+            int i = 0;
+            int spd = character.Animate(CharAnimType.Move);
+            if (spd < 1) spd = 1;
+            Vector3 moveIn3DPos = new Vector3(movement.x * 2f, movement.y * 1.32f);
+            while (i++ < spd)
             {
-                Position.Set(Position.x - 1, Position.y);
+                transform.Translate(moveIn3DPos / spd);
+                yield return null;
             }
+            Position += movement;
         }
     }
 }

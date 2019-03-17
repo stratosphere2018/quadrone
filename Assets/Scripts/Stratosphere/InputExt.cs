@@ -56,15 +56,6 @@ namespace Stratosphere
         #endregion
 
         #region ButtonPress
-        public static bool LXPress { get { return Input.GetButtonDown(L_Stick_X); } }
-        public static bool LYPress { get { return Input.GetButtonDown(L_Stick_Y); } }
-        public static bool LStickPress { get { return LXPress | LYPress; } }
-        public static bool RXPress { get { return Input.GetButtonDown(R_Stick_X); } }
-        public static bool RYPress { get { return Input.GetButtonDown(R_Stick_Y); } }
-        public static bool RStickPress { get { return RXPress | RYPress; } }
-        public static bool POVXPress { get { return Input.GetButtonDown(PoV_X); } }
-        public static bool POVYPress { get { return Input.GetButtonDown(PoV_Y); } }
-        public static bool POVPress { get { return POVXPress | POVYPress; } }
         public static bool Button00Press { get { return Input.GetButtonDown(Button_00); } }
         public static bool Button01Press { get { return Input.GetButtonDown(Button_01); } }
         public static bool Button02Press { get { return Input.GetButtonDown(Button_02); } }
@@ -88,19 +79,9 @@ namespace Stratosphere
                 return Button00Press | Button01Press | Button02Press | Button03Press | Button04Press | Button05Press | Button06Press | Button07Press | Button08Press | Button09Press | Button10Press | Button11Press | Button12Press | Button13Press | Button14Press | Button15Press;
             }
         }
-        public static bool AnyButtonPress { get { return LStickPress | RStickPress | POVPress | ButtonPress; } }
         #endregion
 
         #region ButtonDown
-        public static bool LXDown { get { return Input.GetButton(L_Stick_X); } }
-        public static bool LYDown { get { return Input.GetButton(L_Stick_Y); } }
-        public static bool LStickDown { get { return LXDown | LYDown; } }
-        public static bool RXDown { get { return Input.GetButton(R_Stick_X); } }
-        public static bool RYDown { get { return Input.GetButton(R_Stick_Y); } }
-        public static bool RStickDown { get { return RXDown | RYDown; } }
-        public static bool POVXDown { get { return Input.GetButton(PoV_X); } }
-        public static bool POVYDown { get { return Input.GetButton(PoV_Y); } }
-        public static bool POVDown { get { return POVXDown | POVYDown; } }
         public static bool Button00Down { get { return Input.GetButton(Button_00); } }
         public static bool Button01Down { get { return Input.GetButton(Button_01); } }
         public static bool Button02Down { get { return Input.GetButton(Button_02); } }
@@ -124,19 +105,9 @@ namespace Stratosphere
                 return Button00Down | Button01Down | Button02Down | Button03Down | Button04Down | Button05Down | Button06Down | Button07Down | Button08Down | Button09Down | Button10Down | Button11Down | Button12Down | Button13Down | Button14Down | Button15Down;
             }
         }
-        public static bool AnyButtonDown { get { return LStickDown | RStickDown | POVDown | ButtonDown; } }
         #endregion
 
         #region ButtonUp
-        public static bool LXUp { get { return Input.GetButtonUp(L_Stick_X); } }
-        public static bool LYUp { get { return Input.GetButtonUp(L_Stick_Y); } }
-        public static bool LStickUp { get { return LXUp | LYUp; } }
-        public static bool RXUp { get { return Input.GetButtonUp(R_Stick_X); } }
-        public static bool RYUp { get { return Input.GetButtonUp(R_Stick_Y); } }
-        public static bool RStickUp { get { return RXUp | RYUp; } }
-        public static bool POVXUp { get { return Input.GetButtonUp(PoV_X); } }
-        public static bool POVYUp { get { return Input.GetButtonUp(PoV_Y); } }
-        public static bool POVUp { get { return POVXUp | POVYUp; } }
         public static bool Button00Up { get { return Input.GetButtonUp(Button_00); } }
         public static bool Button01Up { get { return Input.GetButtonUp(Button_01); } }
         public static bool Button02Up { get { return Input.GetButtonUp(Button_02); } }
@@ -160,7 +131,6 @@ namespace Stratosphere
                 return Button00Up | Button01Up | Button02Up | Button03Up | Button04Up | Button05Up | Button06Up | Button07Up | Button08Up | Button09Up | Button10Up | Button11Up | Button12Up | Button13Up | Button14Up | Button15Up;
             }
         }
-        public static bool AnyButtonUp { get { return LStickUp | RStickUp | POVUp | ButtonUp; } }
         #endregion
 
         #region Axis

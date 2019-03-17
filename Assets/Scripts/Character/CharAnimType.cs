@@ -6,6 +6,14 @@
     public enum CharAnimType
     {
         /// <summary>
+        /// 移動
+        /// </summary>
+        Move,
+        /// <summary>
+        /// のけぞり
+        /// </summary>
+        KnockBack,
+        /// <summary>
         /// 通常攻撃
         /// </summary>
         Normal,

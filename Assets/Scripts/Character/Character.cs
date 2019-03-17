@@ -4,17 +4,18 @@ using UnityEngine;
 
 namespace Stratosphere.Quadrone
 {
-    public abstract partial class Character : MonoBehaviour
-    {
-        /// <summary>
-        /// キャラクターの名前
-        /// </summary>
-        public string CharName { get; internal set; }
+    public delegate int CharAnimate(CharAnimType type);
 
-        /// <summary>
-        /// キャラクターをアニメーションさせる
-        /// </summary>
-        /// <param name="type">アニメーションの種類</param>
-        public abstract void Animate(CharAnimType type);
+    [RequireComponent(typeof(CharController))]
+    public abstract class Character : MonoBehaviour
+    {
+        public string charName;
+        public int hp;
+        public CharAnimate Animate;
+
+        private void Awake()
+        {
+            GetComponent<CharController>().character = this;
+        }
     }
 }

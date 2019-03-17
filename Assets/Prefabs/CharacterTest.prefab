@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8318591339401961600}
-  - component: {fileID: 8515478210037248428}
+  - component: {fileID: 4018687412187123426}
+  - component: {fileID: 675170730885978026}
   m_Layer: 0
   m_Name: CharacterTest
   m_TagString: Player
@@ -32,7 +33,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8515478210037248428
+--- !u!114 &4018687412187123426
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,6 +45,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ed43287bf3e9c547a41d4f3f479d480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  side: 0
+  character: {fileID: 0}
+--- !u!114 &675170730885978026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2927705805980492413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2f4c849f3a89f847992958fd920286e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  charName: "\u30C6\u30B9\u30C8\u30AD\u30E3\u30E9\u30AF\u30BF\u30FC"
+  hp: 100
 --- !u!1 &9153021435972760121
 GameObject:
   m_ObjectHideFlags: 0

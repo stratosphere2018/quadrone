@@ -1,6 +1,6 @@
 ﻿namespace Stratosphere.Quadrone
 {
-    public enum PanelColor
+    public enum Side
     {
         /// <summary>
         /// これ、要る？
