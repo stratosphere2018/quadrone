@@ -1,4 +1,6 @@
-﻿namespace Stratosphere.Quadrone.Card
+﻿using System;
+
+namespace Stratosphere.Quadrone.Card
 {
     /// <summary>
     /// カード：ソード
@@ -7,7 +9,7 @@
     {
         Sword()
         {
-            SkillName = "ソード";
+            Name = "ソード";
             Strength = 80;
             Description = "目の前1マスに切りつけるソードを放つ！";
         }
@@ -16,5 +18,12 @@
         {
             player.Animate(CharAnimType.Sword);
         }
+    }
+
+    public enum CardName
+    {
+        None,
+        Canon,
+        Sword,
     }
 }

@@ -53,96 +53,147 @@ namespace Stratosphere
         public static string Button_13 => button_13;
         public static string Button_14 => button_14;
         public static string Button_15 => button_15;
+
         #endregion
 
         #region ButtonPress
-        public static bool Button00Press { get { return Input.GetButtonDown(Button_00); } }
-        public static bool Button01Press { get { return Input.GetButtonDown(Button_01); } }
-        public static bool Button02Press { get { return Input.GetButtonDown(Button_02); } }
-        public static bool Button03Press { get { return Input.GetButtonDown(Button_03); } }
-        public static bool Button04Press { get { return Input.GetButtonDown(Button_04); } }
-        public static bool Button05Press { get { return Input.GetButtonDown(Button_05); } }
-        public static bool Button06Press { get { return Input.GetButtonDown(Button_06); } }
-        public static bool Button07Press { get { return Input.GetButtonDown(Button_07); } }
-        public static bool Button08Press { get { return Input.GetButtonDown(Button_08); } }
-        public static bool Button09Press { get { return Input.GetButtonDown(Button_09); } }
-        public static bool Button10Press { get { return Input.GetButtonDown(Button_10); } }
-        public static bool Button11Press { get { return Input.GetButtonDown(Button_11); } }
-        public static bool Button12Press { get { return Input.GetButtonDown(Button_12); } }
-        public static bool Button13Press { get { return Input.GetButtonDown(Button_13); } }
-        public static bool Button14Press { get { return Input.GetButtonDown(Button_14); } }
-        public static bool Button15Press { get { return Input.GetButtonDown(Button_15); } }
-        public static bool ButtonPress
+        public static bool GetButton00Press()
+        { return Input.GetButtonDown(Button_00); }
+        public static bool GetButton01Press()
+        { return Input.GetButtonDown(Button_01); }
+        public static bool GetButton02Press()
+        { return Input.GetButtonDown(Button_02); }
+        public static bool GetButton03Press()
+        { return Input.GetButtonDown(Button_03); }
+        public static bool GetButton04Press()
+        { return Input.GetButtonDown(Button_04); }
+        public static bool GetButton05Press()
+        { return Input.GetButtonDown(Button_05); }
+        public static bool GetButton06Press()
+        { return Input.GetButtonDown(Button_06); }
+        public static bool GetButton07Press()
+        { return Input.GetButtonDown(Button_07); }
+        public static bool GetButton08Press()
+        { return Input.GetButtonDown(Button_08); }
+        public static bool GetButton09Press()
+        { return Input.GetButtonDown(Button_09); }
+        public static bool GetButton10Press()
+        { return Input.GetButtonDown(Button_10); }
+        public static bool GetButton11Press()
+        { return Input.GetButtonDown(Button_11); }
+        public static bool GetButton12Press()
+        { return Input.GetButtonDown(Button_12); }
+        public static bool GetButton13Press()
+        { return Input.GetButtonDown(Button_13); }
+        public static bool GetButton14Press()
+        { return Input.GetButtonDown(Button_14); }
+        public static bool GetButton15Press()
+        { return Input.GetButtonDown(Button_15); }
+        public static bool GetButtonPress()
         {
-            get
-            {
-                return Button00Press | Button01Press | Button02Press | Button03Press | Button04Press | Button05Press | Button06Press | Button07Press | Button08Press | Button09Press | Button10Press | Button11Press | Button12Press | Button13Press | Button14Press | Button15Press;
-            }
+            return GetButton00Press() | GetButton01Press() | GetButton02Press() | GetButton03Press() | GetButton04Press() | GetButton05Press() | GetButton06Press() | GetButton07Press() | GetButton08Press() | GetButton09Press() | GetButton10Press() | GetButton11Press() | GetButton12Press() | GetButton13Press() | GetButton14Press() | GetButton15Press();
         }
+
         #endregion
 
         #region ButtonDown
-        public static bool Button00Down { get { return Input.GetButton(Button_00); } }
-        public static bool Button01Down { get { return Input.GetButton(Button_01); } }
-        public static bool Button02Down { get { return Input.GetButton(Button_02); } }
-        public static bool Button03Down { get { return Input.GetButton(Button_03); } }
-        public static bool Button04Down { get { return Input.GetButton(Button_04); } }
-        public static bool Button05Down { get { return Input.GetButton(Button_05); } }
-        public static bool Button06Down { get { return Input.GetButton(Button_06); } }
-        public static bool Button07Down { get { return Input.GetButton(Button_07); } }
-        public static bool Button08Down { get { return Input.GetButton(Button_08); } }
-        public static bool Button09Down { get { return Input.GetButton(Button_09); } }
-        public static bool Button10Down { get { return Input.GetButton(Button_10); } }
-        public static bool Button11Down { get { return Input.GetButton(Button_11); } }
-        public static bool Button12Down { get { return Input.GetButton(Button_12); } }
-        public static bool Button13Down { get { return Input.GetButton(Button_13); } }
-        public static bool Button14Down { get { return Input.GetButton(Button_14); } }
-        public static bool Button15Down { get { return Input.GetButton(Button_15); } }
-        public static bool ButtonDown
+        public static bool GetButton00Down()
+        { return Input.GetButton(Button_00); }
+        public static bool GetButton01Down()
+        { return Input.GetButton(Button_01); }
+        public static bool GetButton02Down()
+        { return Input.GetButton(Button_02); }
+        public static bool GetButton03Down()
+        { return Input.GetButton(Button_03); }
+        public static bool GetButton04Down()
+        { return Input.GetButton(Button_04); }
+        public static bool GetButton05Down()
+        { return Input.GetButton(Button_05); }
+        public static bool GetButton06Down()
+        { return Input.GetButton(Button_06); }
+        public static bool GetButton07Down()
+        { return Input.GetButton(Button_07); }
+        public static bool GetButton08Down()
+        { return Input.GetButton(Button_08); }
+        public static bool GetButton09Down()
+        { return Input.GetButton(Button_09); }
+        public static bool GetButton10Down()
+        { return Input.GetButton(Button_10); }
+        public static bool GetButton11Down()
+        { return Input.GetButton(Button_11); }
+        public static bool GetButton12Down()
+        { return Input.GetButton(Button_12); }
+        public static bool GetButton13Down()
+        { return Input.GetButton(Button_13); }
+        public static bool GetButton14Down()
+        { return Input.GetButton(Button_14); }
+        public static bool GetButton15Down()
+        { return Input.GetButton(Button_15); }
+        public static bool GetButtonDown()
         {
-            get
-            {
-                return Button00Down | Button01Down | Button02Down | Button03Down | Button04Down | Button05Down | Button06Down | Button07Down | Button08Down | Button09Down | Button10Down | Button11Down | Button12Down | Button13Down | Button14Down | Button15Down;
-            }
+            return GetButton00Down() | GetButton01Down() | GetButton02Down() | GetButton03Down() | GetButton04Down() | GetButton05Down() | GetButton06Down() | GetButton07Down() | GetButton08Down() | GetButton09Down() | GetButton10Down() | GetButton11Down() | GetButton12Down() | GetButton13Down() | GetButton14Down() | GetButton15Down();
         }
+
         #endregion
 
         #region ButtonUp
-        public static bool Button00Up { get { return Input.GetButtonUp(Button_00); } }
-        public static bool Button01Up { get { return Input.GetButtonUp(Button_01); } }
-        public static bool Button02Up { get { return Input.GetButtonUp(Button_02); } }
-        public static bool Button03Up { get { return Input.GetButtonUp(Button_03); } }
-        public static bool Button04Up { get { return Input.GetButtonUp(Button_04); } }
-        public static bool Button05Up { get { return Input.GetButtonUp(Button_05); } }
-        public static bool Button06Up { get { return Input.GetButtonUp(Button_06); } }
-        public static bool Button07Up { get { return Input.GetButtonUp(Button_07); } }
-        public static bool Button08Up { get { return Input.GetButtonUp(Button_08); } }
-        public static bool Button09Up { get { return Input.GetButtonUp(Button_09); } }
-        public static bool Button10Up { get { return Input.GetButtonUp(Button_10); } }
-        public static bool Button11Up { get { return Input.GetButtonUp(Button_11); } }
-        public static bool Button12Up { get { return Input.GetButtonUp(Button_12); } }
-        public static bool Button13Up { get { return Input.GetButtonUp(Button_13); } }
-        public static bool Button14Up { get { return Input.GetButtonUp(Button_14); } }
-        public static bool Button15Up { get { return Input.GetButtonUp(Button_15); } }
-        public static bool ButtonUp
+        public static bool GetButton00Up()
+        { return Input.GetButtonUp(Button_00); }
+        public static bool GetButton01Up()
+        { return Input.GetButtonUp(Button_01); }
+        public static bool GetButton02Up()
+        { return Input.GetButtonUp(Button_02); }
+        public static bool GetButton03Up()
+        { return Input.GetButtonUp(Button_03); }
+        public static bool GetButton04Up()
+        { return Input.GetButtonUp(Button_04); }
+        public static bool GetButton05Up()
+        { return Input.GetButtonUp(Button_05); }
+        public static bool GetButton06Up()
+        { return Input.GetButtonUp(Button_06); }
+        public static bool GetButton07Up()
+        { return Input.GetButtonUp(Button_07); }
+        public static bool GetButton08Up()
+        { return Input.GetButtonUp(Button_08); }
+        public static bool GetButton09Up()
+        { return Input.GetButtonUp(Button_09); }
+        public static bool GetButton10Up()
+        { return Input.GetButtonUp(Button_10); }
+        public static bool GetButton11Up()
+        { return Input.GetButtonUp(Button_11); }
+        public static bool GetButton12Up()
+        { return Input.GetButtonUp(Button_12); }
+        public static bool GetButton13Up()
+        { return Input.GetButtonUp(Button_13); }
+        public static bool GetButton14Up()
+        { return Input.GetButtonUp(Button_14); }
+        public static bool GetButton15Up()
+        { return Input.GetButtonUp(Button_15); }
+        public static bool GetButtonUp()
         {
-            get
-            {
-                return Button00Up | Button01Up | Button02Up | Button03Up | Button04Up | Button05Up | Button06Up | Button07Up | Button08Up | Button09Up | Button10Up | Button11Up | Button12Up | Button13Up | Button14Up | Button15Up;
-            }
+            return GetButton00Up() | GetButton01Up() | GetButton02Up() | GetButton03Up() | GetButton04Up() | GetButton05Up() | GetButton06Up() | GetButton07Up() | GetButton08Up() | GetButton09Up() | GetButton10Up() | GetButton11Up() | GetButton12Up() | GetButton13Up() | GetButton14Up() | GetButton15Up();
         }
         #endregion
 
         #region Axis
-        public static float LXAxis { get { return Input.GetAxis(L_Stick_X); } }
-        public static float LYAxis { get { return Input.GetAxis(L_Stick_Y); } }
-        public static Vector2 LAxis { get { return new Vector2(LXAxis, LYAxis); } }
-        public static float RXAxis { get { return Input.GetAxis(R_Stick_X); } }
-        public static float RYAxis { get { return Input.GetAxis(R_Stick_Y); } }
-        public static Vector2 RAxis { get { return new Vector2(RXAxis, RYAxis); } }
-        public static float PoVXAxis { get { return Input.GetAxis(PoV_X); } }
-        public static float PoVYAxis { get { return Input.GetAxis(PoV_Y); } }
-        public static Vector2 PoVAxis { get { return new Vector2(PoVXAxis, PoVYAxis); } }
+        public static float GetLXAxis()
+        { return Input.GetAxis(L_Stick_X); }
+        public static float GetLYAxis()
+        { return Input.GetAxis(L_Stick_Y); }
+        public static Vector2 GetLAxis()
+        { return new Vector2(GetLXAxis(), GetLYAxis()); }
+        public static float GetRXAxis()
+        { return Input.GetAxis(R_Stick_X); }
+        public static float GetRYAxis()
+        { return Input.GetAxis(R_Stick_Y); }
+        public static Vector2 GetRAxis()
+        { return new Vector2(GetRXAxis(), GetRYAxis()); }
+        public static float GetPoVXAxis()
+        { return Input.GetAxis(PoV_X); }
+        public static float GetPoVYAxis()
+        { return Input.GetAxis(PoV_Y); }
+        public static Vector2 GetPoVAxis()
+        { return new Vector2(GetPoVXAxis(), GetPoVYAxis()); }
         #endregion
     }
 }

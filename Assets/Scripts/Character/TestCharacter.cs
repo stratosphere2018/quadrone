@@ -4,7 +4,7 @@
     {
         public TestCharacter()
         {
-            CharName = "テストキャラクター";
+            Name = CharName.TestCharacter;
             Hp = 100;
             Animate = Animation;
         }

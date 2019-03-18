@@ -40,9 +40,9 @@ namespace Stratosphere
             while (gameObject.activeSelf)
             {
                 Mesh.text = Text;
-                yield return new WaitForSecondsRealtime(interval);
+                yield return new WaitForSeconds(interval);
                 Mesh.text = "";
-                yield return new WaitForSecondsRealtime(interval);
+                yield return new WaitForSeconds(interval);
             }
         }
 

@@ -6,17 +6,19 @@ namespace Stratosphere.Quadrone
     public class PlayerInput : MonoBehaviour
     {
         private CharController player;
+        private KeyConfig config;
 
         public bool Moved { get; set; }
 
         private void Start()
         {
             player = GetComponent<CharController>();
+            config = PlayerData.Data.KeyCon;
         }
 
         private void Update()
         {
-            Vector2 PoV = InputExt.PoVAxis;
+            Vector2 PoV = config.Move();
             if (PoV.magnitude > 0)
             {
                 if (!Moved)
@@ -34,11 +36,11 @@ namespace Stratosphere.Quadrone
             {
                 Moved = false;
             }
-            if (InputExt.Button00Up)
+            if (config.Attack())
             {
                 // バスター
             }
-            if (InputExt.Button00Down)
+            if (config.Charge())
             {
                 //バスターチャージ
             }

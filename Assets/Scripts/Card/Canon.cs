@@ -7,7 +7,7 @@
     {
         Canon()
         {
-            SkillName = "キャノン";
+            Name = "キャノン";
             Strength = 40;
             Description = "直線状に砲撃を放ちます。";
         }
