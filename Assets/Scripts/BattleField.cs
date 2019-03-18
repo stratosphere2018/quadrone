@@ -19,7 +19,7 @@ namespace Stratosphere.Quadrone
         private void Awake()
         {
 #if UNITY_EDITOR
-            SetPlayerPath("");
+            SetPlayerPath("a");
             SetOpponentPath("");
 #endif
             Panels = new GameObject[AreaXLength, AreaYLength];
