@@ -13,9 +13,15 @@ namespace Stratosphere.Quadrone
         public static int AreaXLength => areaXLength;
         public static int AreaYLength => areaYLength;
         private GameObject[,] Panels { get; set; }
+        private static string PlayerPath { get; set; }
+        private static string OpponentPath { get; set; }
 
         private void Awake()
         {
+#if UNITY_EDITOR
+            SetPlayerPath("");
+            SetOpponentPath("");
+#endif
             Panels = new GameObject[AreaXLength, AreaYLength];
             for (int i = 0; i < AreaXLength; i++)
             {
@@ -35,6 +41,16 @@ namespace Stratosphere.Quadrone
                     }
                 }
             }
+            GameObject playerPrefab = Resources.Load(PlayerPath) as GameObject;
+            GameObject player = Instantiate(playerPrefab);
+            player.transform.position = new Vector3(-3f, -0.44f, 0);
+            player.AddComponent<PlayerInput>();
+            player.SendMessage("SetSide", Side.Player);
+            GameObject opponentPrefab = Resources.Load(OpponentPath) as GameObject;
+            GameObject opponent = Instantiate(opponentPrefab);
+            opponent.transform.position = new Vector3(3f, -0.44f, 0);
+            opponent.transform.localScale = new Vector3(-1f, 1f, 1f);
+            opponent.SendMessage("SetSide", Side.Opponent);
         }
 
         public Side GetSide(int x, int y)
@@ -46,6 +62,23 @@ namespace Stratosphere.Quadrone
         public Side GetSide(Vector2Int pos)
         {
             return GetSide(pos.x, pos.y);
+        }
+
+        public bool Movable(CharController cCtrl, Vector2Int pos)
+        {
+            Side color = GetSide(pos);
+            if (color == cCtrl.side) return true;
+            return false;
+        }
+
+        public static void SetPlayerPath(string path)
+        {
+            PlayerPath = "Character/TestCharacter"; //path;
+        }
+
+        public static void SetOpponentPath(string path)
+        {
+            OpponentPath = "Character/TestCharacter"; //path;
         }
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Stratosphere.Quadrone
 {
-    public abstract class Card : MonoBehaviour
+    public abstract class CardContainer : MonoBehaviour
     {
         /// <summary>
         /// カード名
@@ -24,14 +24,14 @@ namespace Stratosphere.Quadrone
         /// </summary>
         /// <param name="executioner">使用するプレイヤー</param>
         /// <param name="opponent">使用されるプレイヤー</param>
-        internal abstract void Effect(Character executioner, Character opponent);
+        internal abstract void Effect(CharacterContainer executioner, CharacterContainer opponent);
 
         /// <summary>
         /// 実際に使用する際の関数
         /// </summary>
         /// <param name="executioner">使用するプレイヤー</param>
         /// <param name="opponent">使用されるプレイヤー</param>
-        public void Use(Character executioner, Character opponent)
+        public void Use(CharacterContainer executioner, CharacterContainer opponent)
         {
             Effect(executioner, opponent);
         }

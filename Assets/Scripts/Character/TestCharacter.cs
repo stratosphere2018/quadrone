@@ -1,11 +1,11 @@
-﻿namespace Stratosphere.Quadrone
+﻿namespace Stratosphere.Quadrone.Character
 {
-    public class TestCharacter : Character
+    public class TestCharacter : CharacterContainer
     {
         public TestCharacter()
         {
-            charName = "テストキャラクター";
-            hp = 100;
+            CharName = "テストキャラクター";
+            Hp = 100;
             Animate = Animation;
         }
 

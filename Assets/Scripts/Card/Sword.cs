@@ -1,9 +1,9 @@
-﻿namespace Stratosphere.Quadrone
+﻿namespace Stratosphere.Quadrone.Card
 {
     /// <summary>
     /// カード：ソード
     /// </summary>
-    public class Sword : Card
+    public class Sword : CardContainer
     {
         Sword()
         {
@@ -12,7 +12,7 @@
             Description = "目の前1マスに切りつけるソードを放つ！";
         }
 
-        internal override void Effect(Character player, Character opponent)
+        internal override void Effect(CharacterContainer player, CharacterContainer opponent)
         {
             player.Animate(CharAnimType.Sword);
         }

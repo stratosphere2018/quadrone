@@ -7,10 +7,10 @@ namespace Stratosphere.Quadrone
     public class CharController : MonoBehaviour
     {
         public Side side;
-        public Character character;
+        public CharacterContainer character;
 
         public BattleField Field { get; private set; }
-        public Vector2Int Position { get; set; }
+        public Vector2Int Position { get; private set; }
 
 
         // Start is called before the first frame update
@@ -35,8 +35,7 @@ namespace Stratosphere.Quadrone
         public void MoveInput(Vector2Int movement)
         {
             Vector2Int next = Position + movement;
-            Debug.Log(Field.GetSide(next).ToString());
-            if (0 <= next.x && next.x < BattleField.AreaXLength && 0 <= next.y && next.y < BattleField.AreaYLength && Field.GetSide(next) == side)
+            if (0 <= next.x && next.x < BattleField.AreaXLength && 0 <= next.y && next.y < BattleField.AreaYLength && Field.Movable(this, next))
             {
                 StartCoroutine("Move", movement);
             }
@@ -54,6 +53,11 @@ namespace Stratosphere.Quadrone
                 yield return null;
             }
             Position += movement;
+        }
+
+        public void SetSide(Side side)
+        {
+            this.side = side;
         }
     }
 }
