@@ -6,6 +6,11 @@
         {
             Name = CharName.TestCharacter;
             Hp = 100;
+            BusterAtk = 1;
+            BusterRapid = 1;
+            BusterCharge = 1;
+            ChargeCount = 0;
+            ChargeShot = false;
             Animate = Animation;
         }
 

@@ -19,11 +19,4 @@ namespace Stratosphere.Quadrone.Card
             player.Animate(CharAnimType.Sword);
         }
     }
-
-    public enum CardName
-    {
-        None,
-        Canon,
-        Sword,
-    }
 }

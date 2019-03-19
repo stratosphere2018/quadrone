@@ -59,5 +59,6 @@ namespace Stratosphere.Quadrone
         {
             this.side = side;
         }
+
     }
 }

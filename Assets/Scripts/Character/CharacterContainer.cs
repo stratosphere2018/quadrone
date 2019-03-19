@@ -13,6 +13,11 @@ namespace Stratosphere.Quadrone
     {
         public CharName Name { get; internal set; }
         public int Hp { get; internal set; }
+        public int BusterAtk { get; internal set; }
+        public int BusterRapid { get; internal set; }
+        public int BusterCharge { get; internal set; }
+        public float ChargeCount { get; internal set; }
+        public bool ChargeShot { get; internal set; }
         public CharAnimate Animate { get; internal set; }
 
         private void Awake()
