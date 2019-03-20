@@ -35,8 +35,10 @@ namespace BeginIt {
         static Button rightButton = new Button("Horizontal");
 
         // 4. Repeat threshold and speed.
-        static float threshold = 0.3f;
+        static float threshold = 0.25f;
         static float speed = threshold;
+        static bool isDirButtonPressed = false;
+        static float dirButtonNextTime = 0f;
 
         static bool IsButtonDown(Button button) {
             return IsButtonDown(button, false);
@@ -46,15 +48,26 @@ namespace BeginIt {
             if ((button.isNegative && Input.GetAxisRaw(button.axis) < 0f)
                 || (!button.isNegative && Input.GetAxisRaw(button.axis) > 0f)) {
 
-                if ((isRepeatedly && Time.unscaledTime > button.nextTime)
-                    || (!isRepeatedly && !button.isPressed)) {
+                if ((isRepeatedly && (Time.unscaledTime > button.nextTime && Time.unscaledTime > dirButtonNextTime))
+                    || (!isRepeatedly && (!button.isPressed || !isDirButtonPressed))) {
 
-                    if (isRepeatedly) button.nextTime = Time.unscaledTime + (button.isPressed ? speed : threshold);
+                    if (isRepeatedly) {
+                        button.nextTime = Time.unscaledTime + ((button.isPressed || isDirButtonPressed) ? speed : threshold);
+                        dirButtonNextTime = button.nextTime;
+                    }
                     button.isPressed = true;
+                    isDirButtonPressed = true;
                     return true;
                 }
             } else {
-                if (isRepeatedly) button.nextTime = 0f;
+                if (isRepeatedly) {
+                    if (button.nextTime != 0f)
+                        dirButtonNextTime = 0f;
+                        button.nextTime = 0f;
+                }
+
+                if (button.isPressed)
+                    isDirButtonPressed = false;
                 button.isPressed = false;
             }
             return false;
