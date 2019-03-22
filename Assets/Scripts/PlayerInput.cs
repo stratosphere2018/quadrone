@@ -7,9 +7,9 @@ namespace Stratosphere.Quadrone
     {
         private CharController player;
         private CharController opponent;
-        CharacterContainer playerStatus;
-        CharacterContainer opponentStatus;
         private KeyConfig config;
+
+        public bool Buster { get; set; }
 
 
         public bool Moved { get; set; }
@@ -40,27 +40,10 @@ namespace Stratosphere.Quadrone
             {
                 Moved = false;
             }
-            if (config.Attack() && playerStatus.ChargeShot)
-            {
-                if (player.Position.y == opponent.Position.y)
-                    opponentStatus.Hp -= playerStatus.BusterAtk * 10;
-            }
-            else if (config.Attack())
-            {
-                // バスター
-                if (player.Position.y == opponent.Position.y)
-                    opponentStatus.Hp -= playerStatus.BusterAtk;
-            }
+            if (config.Attack())
+                player.BusterInput();
             if (config.Charge())
-            {
-                playerStatus.ChargeCount += playerStatus.BusterCharge;
-                //バスターチャージ
-                if (playerStatus.ChargeCount >= 100)
-                {
-                    playerStatus.ChargeCount = 100;
-                    playerStatus.ChargeShot = true;
-                }
-            }
+                player.Charge();
         }
     }
 }
