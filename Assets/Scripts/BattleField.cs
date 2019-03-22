@@ -52,6 +52,8 @@ namespace Stratosphere.Quadrone
             opponent.transform.position = new Vector3(3f, -0.44f, 0);
             opponent.transform.localScale = new Vector3(-1f, 1f, 1f);
             opponent.SendMessage("SetSide", Side.Opponent);
+
+            player.GetComponent<CharController>().opponent = opponent.GetComponent<CharController>();
         }
 
         public Side GetSide(int x, int y)

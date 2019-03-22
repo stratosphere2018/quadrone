@@ -9,7 +9,7 @@ namespace Stratosphere.Quadrone
         public Side side;
         public CharacterContainer character;
         public CharacterContainer playerStatus;
-        public CharacterContainer opponentStatus;
+        public CharController opponent;
         public BattleField Field { get; private set; }
         public Vector2Int Position { get; private set; }
 
@@ -63,16 +63,17 @@ namespace Stratosphere.Quadrone
         {
             if (playerStatus.ChargeShotFlag)
             {
-                playerStatus.ChargeCount = 0;
                 if (Position.y == Position.y)
-                    opponentStatus.Hp -= playerStatus.BusterAtkPower * 10;
+                    opponent.character.Hp -= playerStatus.BusterAtkPower * 10;
             }
             else
             {
                 // バスター
                 if (Position.y == Position.y)
-                    opponentStatus.Hp -= playerStatus.BusterAtkPower;
+                    opponent.character.Hp -= playerStatus.BusterAtkPower;
             }
+            playerStatus.ChargeCount = 0;
+            playerStatus.ChargeShotFlag = false;
         }
         public bool Charge()
         {
