@@ -8,10 +8,10 @@ namespace Stratosphere.Quadrone
     {
         public Side side;
         public CharacterContainer character;
-
+        public CharacterContainer playerStatus;
+        public CharController opponent;
         public BattleField Field { get; private set; }
         public Vector2Int Position { get; private set; }
-
 
         // Start is called before the first frame update
         void Start()
@@ -58,6 +58,33 @@ namespace Stratosphere.Quadrone
         public void SetSide(Side side)
         {
             this.side = side;
+        }
+        public void BusterInput()
+        {
+            if (playerStatus.ChargeShotFlag)
+            {
+                if (Position.y == Position.y)
+                    opponent.character.Hp -= playerStatus.BusterAtkPower * 10;
+            }
+            else
+            {
+                // バスター
+                if (Position.y == Position.y)
+                    opponent.character.Hp -= playerStatus.BusterAtkPower;
+            }
+            playerStatus.ChargeCount = 0;
+            playerStatus.ChargeShotFlag = false;
+        }
+        public bool Charge()
+        {
+            playerStatus.ChargeCount += playerStatus.BusterChargePower;
+            //バスターチャージ
+            if (playerStatus.ChargeCount >= 100)
+            {
+                playerStatus.ChargeCount = 100;
+                playerStatus.ChargeShotFlag = true;
+            }
+            return false;
         }
     }
 }

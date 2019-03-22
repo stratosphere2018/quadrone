@@ -6,7 +6,11 @@ namespace Stratosphere.Quadrone
     public class PlayerInput : MonoBehaviour
     {
         private CharController player;
+        private CharController opponent;
         private KeyConfig config;
+
+        public bool Buster { get; set; }
+
 
         public bool Moved { get; set; }
 
@@ -37,13 +41,9 @@ namespace Stratosphere.Quadrone
                 Moved = false;
             }
             if (config.Attack())
-            {
-                // バスター
-            }
+                player.BusterInput();
             if (config.Charge())
-            {
-                //バスターチャージ
-            }
+                player.Charge();
         }
     }
 }
