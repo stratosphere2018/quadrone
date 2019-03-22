@@ -54,6 +54,7 @@ namespace Stratosphere.Quadrone
             opponent.SendMessage("SetSide", Side.Opponent);
 
             player.GetComponent<CharController>().opponent = opponent.GetComponent<CharController>();
+            opponent.GetComponent<CharController>().opponent = player.GetComponent<CharController>();
         }
 
         public Side GetSide(int x, int y)
