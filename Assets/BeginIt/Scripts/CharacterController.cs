@@ -6,13 +6,10 @@ namespace BeginIt.Quadrone {
         protected Battlefield battlefield { get => battle.battlefield; }
         protected Character character;
 
-        protected virtual void Awake() {
-            character = GetComponent<Character>();
-        }
-
         public virtual void Init(Battle battle, Team team) {
             this.battle = battle;
 
+            character = GetComponent<Character>();
             character.Init(battlefield, team);
         }
 
